@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Loan Calculator</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body ng-app="LoanCalculator" ng-controller="MainCtrl">
+
+  <div class="container">
+    <div class="card">
+      <h2>Loan Calculator</h2>
+
+      <div class="callout">
+        <h3>Market Notice</h3>
+        Current market conditions may affect interest rates. Rates are updated in real-time.
+      </div>
+
+      <div class="rate-display">
+        <h3>Current Interest Rate</h3>
+        <div class="rate-value" ng-if="!loading">{{interest_rate}}%</div>
+        <div class="rate-value" ng-if="loading">...</div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Loan Amount (₹)</label>
+        <input type="number" class="form-control" ng-model="principal" placeholder="Enter amount (e.g. 5000)" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Loan Term (Months)</label>
+        <select class="form-control" ng-model="loan_term">
+          <option value="6">6 Months</option>
+          <option value="12">12 Months</option>
+          <option value="24">24 Months</option>
+          <option value="48" selected>48 Months</option>
+        </select>
+      </div>
+
+      <button class="btn-calculate" ng-click="calculatePayment()">Calculate Payment</button>
+
+      <div class="result-section" ng-show="monthly_payment !== '0.00'">
+        <div class="result-label">Estimated Monthly Payment</div>
+        <div class="result-value">₹{{monthly_payment}}</div>
+      </div>
+    </div>
+
+    <footer>
+      &copy; 2025 Kshethra Biyyala. All rights reserved.
+    </footer>
+  </div>
+
+  <!-- Angular and App Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/services/bank-service.js"></script>
+  <script src="js/controllers/main-ctrl.js"></script>
+</body>
+
+</html>
