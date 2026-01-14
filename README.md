@@ -4,7 +4,7 @@ A premium, client-side Angular application for calculating loan payments.
 
 ## Features
 - **Real-time Interest Rates**: Fetches current market rates (simulated) asynchronously.
-- **Instant Calculation**: Calculates monthly payments for a standard 48-month term.
+- **Instant Calculation**: Calculates monthly payments for 6, 12, 24, 48-month term.
 - **Premium UI**: Modern, responsive design with a clean aesthetic.
 
 ## Tech Stack
@@ -15,6 +15,4 @@ A premium, client-side Angular application for calculating loan payments.
 ## Usage
 Simply open `index.html` in any modern web browser. No server installation required.
 
-## Attribution
-Developed by **Kshethra Biyyala**
-Copyright © 2025. All rights reserved.
+
